@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+
+    <h1 class="mx-auto text-xl font-bold text-center">calculator</h1> <br>
+    <div  class=" flex flex-col cal-body w-[250px] h-[px] bg-black mx-auto rounded-xl">
+        <div class="p-5 screen-tab bg-slate-900 rounded-xl">
+            <div class="p-3 h-[60px] text-3xl font-bold screen bg-slate-100 overflow-hidden"></div>
+        </div>
+
+        <div class="grid grid-cols-4 gap-3 p-5 mx-auto font-bold button-body">
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#b3b3b3] text-black h-[40px] w-[40px] rounded-full">C</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#b3b3b3] text-black h-[40px] w-[40px] rounded-full">+/-</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#b3b3b3] text-black h-[40px] w-[40px] rounded-full">%</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#ff8800] text-white h-[40px] w-[40px] rounded-full">/</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#3C3C3C] text-white h-[40px] w-[40px] rounded-full">7</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#3C3C3C] text-white h-[40px] w-[40px] rounded-full">8</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#3C3C3C] text-white h-[40px] w-[40px] rounded-full">9</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#ff8800] text-white h-[40px] w-[40px] rounded-full">*</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#3C3C3C] text-white h-[40px] w-[40px] rounded-full">4</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#3C3C3C] text-white h-[40px] w-[40px] rounded-full">5</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#3C3C3C] text-white h-[40px] w-[40px] rounded-full">6</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#ff8800] text-white h-[40px] w-[40px] rounded-full">-</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#3C3C3C] text-white h-[40px] w-[40px] rounded-full">1</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#3C3C3C] text-white h-[40px] w-[40px] rounded-full">2</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#3C3C3C] text-white h-[40px] w-[40px] rounded-full">3</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#ff8800] text-white h-[40px] w-[40px] rounded-full">+</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#3C3C3C] text-white h-[40px] w-[40px] rounded-full">0</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#3C3C3C] text-white h-[40px] w-[40px] rounded-full">00</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#3C3C3C] text-white h-[40px] w-[40px] rounded-full">.</button>
+            <button class="active:bg-[#f2e1bd] gap -[15px] bg-[#ff8800] text-white h-[40px] w-[40px] rounded-full">=</button>
+        </div>
+       
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script >
+        let calBody = document.querySelector('.cal-body')
+        let screen = document.querySelector('.screen')
+        let btn = document.querySelectorAll('button')
+        
+        for (let i = 0; i < btn.length; i++) {
+          btn[i].addEventListener('click', () => {
+            if (btn[i].innerHTML == '=') {
+              screen.innerHTML = eval(screen.innerHTML)
+            } else {
+              if (btn[i].innerHTML == 'C') {
+                screen.innerHTML = ''
+              } else  {
+                screen.innerHTML += btn[i].innerHTML
+              }
+            }
+          })
+        }
+        </script>
+</body>
+</html>
